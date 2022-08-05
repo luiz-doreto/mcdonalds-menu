@@ -7,12 +7,6 @@ export const Container = styled.View`
   background-color: ${({ theme }) => theme.colors.white};
 `;
 
-export const Image = styled.Image`
-  margin-top: 50px;
-  height: 220px;
-  width: 100%;
-`;
-
 export const ProductName = styled.Text`
   font-size: ${({ theme }) => theme.fontSize.large}px;
   font-weight: 700;

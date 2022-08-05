@@ -3,12 +3,12 @@ import { StackScreensParams } from '~/Types';
 
 import {
   Container,
-  Image,
   ProductName,
   PriceContainer,
   PriceValue,
   Details,
 } from './styles';
+import AnimatedImage from '~/components/AnimatedImage';
 
 type ScreenProps = NativeStackScreenProps<StackScreensParams, 'Details'>;
 
@@ -17,7 +17,10 @@ const ItemDetails = ({ route }: ScreenProps) => {
 
   return (
     <Container>
-      <Image source={{ uri: item.url }} />
+      <AnimatedImage
+        source={{ uri: item.url }}
+        style={{ height: 220, width: '100%', marginTop: 50 }}
+      />
       <ProductName>{item.name}</ProductName>
       <PriceContainer>
         <PriceValue>{`$${item.price}`}</PriceValue>

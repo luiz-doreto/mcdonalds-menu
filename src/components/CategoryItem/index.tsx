@@ -2,7 +2,8 @@ import { useNavigation } from '@react-navigation/native';
 
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { MenuItemType, StackScreensParams } from '~/Types';
-import { Container, Label, Image } from './styles';
+import { Container, Label } from './styles';
+import AnimatedImage from '~/components/AnimatedImage';
 
 type CategoryItemType = {
   item: MenuItemType;
@@ -22,7 +23,10 @@ const CategoryItem = ({ item }: CategoryItemType) => {
 
   return (
     <Container onPress={handlePress}>
-      <Image source={{ uri: item.url }} />
+      <AnimatedImage
+        source={{ uri: item.url }}
+        style={{ height: 100, width: 156, marginTop: 5 }}
+      />
       <Label>{item.name}</Label>
     </Container>
   );
