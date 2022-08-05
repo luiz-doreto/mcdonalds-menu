@@ -1,0 +1,13 @@
+{
+  "colors": {
+    "white": "#fff",
+    "black": "#000",
+    "gray": "#d8d8d8"
+  },
+  "fontSize": {
+    "small": 12,
+    "medium": 16,
+    "large": 24,
+    "xLarge": 36
+  }
+}
