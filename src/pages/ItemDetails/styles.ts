@@ -11,6 +11,7 @@ export const ProductName = styled.Text`
   font-size: ${({ theme }) => theme.fontSize.large}px;
   font-weight: 700;
   margin-top: 48px;
+  text-align: center;
 `;
 
 export const PriceContainer = styled.View`

@@ -6,10 +6,8 @@ export const SafeArea = styled(SafeAreaView)`
   background-color: ${({ theme }) => theme.colors.white};
 `;
 
-export const Container = styled.ScrollView.attrs({
-  showsVerticalScrollIndicator: false,
-})`
+export const Container = styled.View`
   flex: 1;
-  padding: 20px 0 20px 20px;
+  padding-left: 20px;
   background-color: ${({ theme }) => theme.colors.white};
 `;

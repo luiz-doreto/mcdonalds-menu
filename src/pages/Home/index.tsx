@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
+import { FlatList } from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import Icon from '@expo/vector-icons/Feather';
 
@@ -13,12 +14,12 @@ type ScreenProps = NativeStackScreenProps<StackScreensParams, 'Home'>;
 
 const Home = ({ navigation }: ScreenProps) => {
   const { setCompanyDetails } = useContext(AppContext);
-  const [company, setCompany] = useState<DataType>();
+  const [menus, setMenus] = useState<DataType['menus']>();
 
   const fetchContent = async () => {
     const { data } = await api.get<DataType>('menu');
-    setCompany(data);
     setCompanyDetails(data);
+    setMenus(data.menus);
   };
 
   useEffect(() => {
@@ -32,14 +33,17 @@ const Home = ({ navigation }: ScreenProps) => {
         onRightPress={() => navigation.navigate('About')}
       />
       <Container>
-        {company &&
-          company?.menus?.map(menu => (
+        <FlatList
+          data={menus}
+          keyExtractor={item => item.name}
+          renderItem={({ item }) => (
             <CategoryList
-              key={menu.name}
-              header={menu.name}
-              items={menu.items}
+              key={item.name}
+              header={item.name}
+              items={item.items}
             />
-          ))}
+          )}
+        />
       </Container>
     </SafeArea>
   );
