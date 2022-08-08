@@ -1,6 +1,9 @@
 import styled from 'styled-components/native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
-export const Container = styled.View`
+export const Container = styled(SafeAreaView).attrs({
+  edges: ['bottom'],
+})`
   flex: 1;
   align-items: center;
   padding: 20px;
@@ -37,4 +40,43 @@ export const Details = styled.Text`
   font-weight: 400;
   color: ${({ theme }) => theme.colors.black};
   text-align: center;
+`;
+
+export const ButtonContainer = styled.View`
+  flex: 1;
+  width: 100%;
+  justify-content: flex-end;
+`;
+
+export const Button = styled.TouchableOpacity`
+  flex: 1;
+  max-height: 90px;
+  background-color: ${({ theme }) => theme.colors.yellow};
+  border-radius: 50%;
+  margin: 10px;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const DisabledButton = styled.View`
+  flex: 1;
+  max-height: 90px;
+  background-color: ${({ theme }) => theme.colors.disabled};
+  border-radius: 50%;
+  margin: 10px;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const ButtonText = styled.Text`
+  font-weight: 600;
+  font-size: ${({ theme }) => theme.fontSize.large}px;
+  color: ${({ theme }) => theme.colors.black};
+`;
+
+export const ButtonTextDisabled = styled.Text`
+  font-weight: 600;
+  opacity: 0.5;
+  font-size: ${({ theme }) => theme.fontSize.large}px;
+  color: ${({ theme }) => theme.colors.black};
 `;

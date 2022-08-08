@@ -5,7 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 
 import { AppProvider } from './src/context';
 import theme from './src/theme.json';
-import Navigation from './src/navigation';
+import Navigation from './src/navigation/Tabs';
 
 export default function App() {
   return (

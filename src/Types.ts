@@ -44,3 +44,8 @@ export type StackScreensParams = {
   Details: { item: MenuItemType };
   About: undefined;
 };
+
+export type TabScreensParams = {
+  Menu: StackScreensParams;
+  Cart: undefined;
+};

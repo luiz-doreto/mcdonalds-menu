@@ -8,8 +8,15 @@ export const SafeArea = styled(SafeAreaView).attrs({
   background-color: ${({ theme }) => theme.colors.white};
 `;
 
-export const Container = styled.View`
+export const EmptyContainer = styled.View`
   flex: 1;
-  padding-left: 20px;
-  background-color: ${({ theme }) => theme.colors.white};
+  align-items: center;
+  justify-content: center;
+`;
+
+export const EmptyText = styled.Text`
+  font-size: ${({ theme }) => theme.fontSize.medium}px;
+  color: ${({ theme }) => theme.colors.black};
+  opacity: 0.5;
+  margin-top: 10px;
 `;
