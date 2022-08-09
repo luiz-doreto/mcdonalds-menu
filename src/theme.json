@@ -2,7 +2,10 @@
   "colors": {
     "white": "#fff",
     "black": "#000",
-    "gray": "#d8d8d8"
+    "gray": "#d8d8d8",
+    "yellow": "#f2c103",
+    "disabled": "#e1e6ea",
+    "danger": "#FF0e0e"
   },
   "fontSize": {
     "small": 12,
